@@ -1,4 +1,4 @@
 myLittleToolbelt
 ================
 
-Collection of handy JS / CSS snippets
+Collection of little JS / CSS snippets

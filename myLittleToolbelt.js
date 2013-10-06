@@ -154,3 +154,98 @@ var myArray = [0,1,2],
 function randomFromTo(from, to) {
     return Math.floor(Math.random() * (to - from + 1) + from);
 }
+
+
+
+/*
+ * rounding numbers
+ * example: rounding(13.5374,2)
+ * ==> 13,54
+ */
+function rounding(value, places) {
+    var multiplier = Math.pow(10, places);
+    return (Math.round(value * multiplier) / multiplier);
+}
+
+
+/**
+ * get viewportsize
+ * @returns {{width: number, height: number}}
+ */
+function getViewportSize() {
+    var wdth = 0;
+    var hth = 0;
+    if (!window.innerWidth) {
+        wdth = (document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth);
+        hth = (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight);
+    } else {
+        wdth = window.innerWidth;
+        hth = window.innerHeight;
+    }
+    return {
+        width: wdth,
+        height: hth
+    };
+}
+var viewportWidth = getViewportSize().width;
+var viewportHeight = getViewportSize().height;
+
+
+
+/**
+ * quick and dirty way to build an html table
+ */
+function buildHTMLTable() {
+    var i;
+    var stringBuilder = function () {
+        this.buffer = [];
+    };
+
+    stringBuilder.prototype = {
+        cat: function (what) {
+            this.buffer.push(what);
+            return this;
+        },
+        string: function () {
+            return this.buffer.join('');
+        }
+    };
+
+    var html = new stringBuilder();
+
+    var howManyRows = 15;
+
+    // make table headers
+    html.cat("<table>");
+    html.cat("<caption>Caption text ");
+    html.cat(" quakes</caption>");
+    html.cat(
+        "<th>some text 1</th>" +
+        "<th>some text 2</th>" +
+        "<th>some text 3</th>" +
+        "<th>some text 4</th>"
+    );
+
+    // make rows and cells with content
+    for (i = 0; i < howManyRows; i++) {
+        html.cat("<tr>");
+        html.cat("<td>");
+        html.cat("something 1");
+        html.cat("</td>");
+        html.cat("<td>");
+        html.cat("something 2");
+        html.cat("</td>");
+        html.cat("<td>");
+        html.cat("something 3");
+        html.cat("</td>");
+        html.cat("<td>");
+        html.cat("something 4");
+        html.cat("</td>");
+        html.cat("</tr>");
+    }
+    // and close table
+    html.cat("</table>");
+
+    // and append string to DOM, requires jQuery
+    $('#details').empty().append(html.string());
+}

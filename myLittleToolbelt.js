@@ -1,4 +1,23 @@
 /*
+ * wobbly images
+ * inspired by www.justinaguilar.com/animations/
+ * make images with certain class name wobbly
+ */
+(function(args) {
+    var thingToAnimate = document.querySelectorAll(args.classThatWeWantToWobble);
+    var i = 0;
+    (function addAnimation(){
+        if (i < thingToAnimate.length) {
+            thingToAnimate[i].setAttribute("class", "wobble");
+            i++;
+            setTimeout(addAnimation, 100);
+        }
+    })();
+})({classThatWeWantToWobble: ".foo" });
+
+
+
+/*
  * calculate frames per second
  * source: http://stackoverflow.com/questions/5078913/html5-canvas-performance-calculating-loops-frames-per-second
  */

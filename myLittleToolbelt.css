@@ -1,4 +1,76 @@
 /*
+ * wobbly images
+ * inspired by www.justinaguilar.com/animations/
+ */
+.wobble {
+    animation-name: wobble;
+    -webkit-animation-name: wobble;
+
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+
+    visibility: visible !important;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg) scaleY(1);
+    }
+    20% {
+        transform: rotate(-2deg) scaleY(1.05);
+    }
+    35% {
+        transform: rotate(2deg) scaleY(1);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    65% {
+        transform: rotate(1deg);
+    }
+    80% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes wobble {
+    0% {
+        -webkit-transform: rotate(0deg) scaleY(1);
+    }
+    20% {
+        -webkit-transform: rotate(-2deg) scaleY(1.05);
+    }
+    35% {
+        -webkit-transform: rotate(2deg) scaleY(1);
+    }
+    50% {
+        -webkit-transform: rotate(-2deg);
+    }
+    65% {
+        -webkit-transform: rotate(1deg);
+    }
+    80% {
+        -webkit-transform: rotate(-1deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+
+
+/*
  * prevent selection of text
  * source: http://stackoverflow.com/questions/2326004/prevent-selection-in-html
  * DON"T FORGET THE JS!!!!

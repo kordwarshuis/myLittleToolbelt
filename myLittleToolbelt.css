@@ -1,6 +1,8 @@
 /*
  * wobbly images
  * inspired by www.justinaguilar.com/animations/
+ * make images with certain class name wobbly
+ * DON'T FORGET THE JS
  */
 .wobble {
     animation-name: wobble;

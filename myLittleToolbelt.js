@@ -2,6 +2,7 @@
  * wobbly images
  * inspired by www.justinaguilar.com/animations/
  * make images with certain class name wobbly
+ * DON'T FORGET THE CSS
  */
 (function(args) {
     var thingToAnimate = document.querySelectorAll(args.classThatWeWantToWobble);
@@ -13,7 +14,7 @@
             setTimeout(addAnimation, 100);
         }
     })();
-})({classThatWeWantToWobble: ".foo" });
+})({classThatWeWantToWobble: ".foo" }); // images with a class name "foo" will be wobblified
 
 
 

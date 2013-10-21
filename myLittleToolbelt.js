@@ -2,7 +2,7 @@
  * add a class attribute to elements with already a certain class attached, with a delay.
  *
  * Example:
- * we have 5 images with class .foo. This function adds a class with name .bar every 1000 miliseconds
+ * we have 5 elements with class .foo. This function adds a class with name .bar to one of the elements every 1000 miliseconds
  * Application: if you want to add animation to elements, but you don't want to animate everything in exactly the same pace
  */
 (function(args) {

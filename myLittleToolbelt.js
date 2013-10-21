@@ -1,4 +1,28 @@
 /*
+ * add a class attribute to elements with already a certain class attached, with a delay.
+ *
+ * Example:
+ * we have 5 images with class .foo. This function adds a class with name .bar every 1000 miliseconds
+ * Application: if you want to add animation to elements, but you don't want to animate everything in exactly the same pace
+ */
+(function(args) {
+    var targetClass = document.querySelectorAll(args.targetClass);
+    var i = 0;
+    (function recursive(){
+        if (i < targetClass.length) {
+            targetClass[i].className += " " + args.newClass;
+            i++;
+            setTimeout(recursive, args.delay);
+        }
+    })();
+})({
+    targetClass: ".foo",
+    newClass: "bar", // no dot!
+    delay: 1000 // miliseconds, 1000 ms = 1 sec
+});
+
+
+/*
  * wobbly images
  * inspired by www.justinaguilar.com/animations/
  * make images with certain class name wobbly

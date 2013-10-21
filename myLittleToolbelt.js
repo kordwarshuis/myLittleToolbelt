@@ -1,3 +1,26 @@
+/**
+ * There was (used to be) no fadeout in soundjs (createjs lib), this is a snippet to fill the gap
+ * Assumes an object with:
+ *   method: theSound.setVolume()
+ *   method: theSound.stop()
+ */
+(function fadeOut(args) {
+    if (args.whatToFade > 0) {
+        theSound.setVolume(args.whatToFade * args.whatToFade * args.whatToFade);
+        args.whatToFade -= 0.05;
+        setTimeout(fadeOut, args.speed);
+    }
+    else {
+        theSound.stop();
+    }
+}({
+    soundObject: theSound,
+    whatToFade: 1, // aNumberPlease
+    speed: 100
+}));
+
+
+
 /*
  * add a class attribute to elements with already a certain class attached, with a delay.
  *
@@ -20,6 +43,7 @@
     newClass: "bar", // no dot!
     delay: 1000 // miliseconds, 1000 ms = 1 sec
 });
+
 
 
 /*

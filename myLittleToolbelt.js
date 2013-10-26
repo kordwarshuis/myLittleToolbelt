@@ -57,7 +57,7 @@
     var i = 0;
     (function addAnimation(){
         if (i < thingToAnimate.length) {
-            thingToAnimate[i].setAttribute("class", "wobble");
+            thingToAnimate[i].className += " " + "wobble";
             i++;
             setTimeout(addAnimation, 100);
         }
@@ -142,9 +142,17 @@ Array.min = function( array ){
 
 
 /*
+ * source: http://www.nczonline.net/blog/2009/03/03/the-art-of-throwing-javascript-errors/
  * add a class
+ *
 */
-document.getElementById("foo").className += " " + "new-class";
+function addClass(element, className){
+    if (element != null && typeof element.className == "string"){
+        element.className += " " + className;
+    } else {
+        throw new Error("addClass(): First arg must be a DOM element.");
+    }
+}
 
 
 

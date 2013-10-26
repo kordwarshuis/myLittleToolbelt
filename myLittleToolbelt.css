@@ -1,12 +1,15 @@
 /*
- * wobbly images
+ * wobblyImages
+ * DO NOT FORGET THE JS
  * inspired by www.justinaguilar.com/animations/
  * make images with certain class name wobbly
- * DON'T FORGET THE JS
+ * Copyright (c) 2013 Kor Dwarshuis (dwarshuis.com)
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/mit-license.php
  */
-.wobble {
-    animation-name: wobble;
-    -webkit-animation-name: wobble;
+.wobblyImages {
+    animation-name: wobblyImages;
+    -webkit-animation-name: wobblyImages;
 
     animation-duration: 6s;
     -webkit-animation-duration: 6s;
@@ -23,7 +26,7 @@
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
 }
-@keyframes wobble {
+@keyframes wobblyImages {
     0% {
         transform: rotate(0deg) scaleY(1);
     }
@@ -46,7 +49,7 @@
         transform: rotate(0deg);
     }
 }
-@-webkit-keyframes wobble {
+@-webkit-keyframes wobblyImages {
     0% {
         -webkit-transform: rotate(0deg) scaleY(1);
     }

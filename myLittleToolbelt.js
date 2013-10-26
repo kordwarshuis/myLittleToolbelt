@@ -47,23 +47,26 @@
 
 
 /*
- * wobbly images
+ * wobblyImages
+ * DO NOT FORGET THE JS
  * inspired by www.justinaguilar.com/animations/
  * make images with certain class name wobbly
- * DON'T FORGET THE CSS
+ * Copyright (c) 2013 Kor Dwarshuis (dwarshuis.com)
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/mit-license.php
  */
-(function(args) {
+var wobblyImages = function(args) {
     var thingToAnimate = document.querySelectorAll(args.classThatWeWantToWobble);
     var i = 0;
     (function addAnimation(){
         if (i < thingToAnimate.length) {
-            thingToAnimate[i].className += " " + "wobble";
+            thingToAnimate[i].className += " " + "wobblyImages";
             i++;
             setTimeout(addAnimation, 100);
         }
     })();
-})({classThatWeWantToWobble: ".foo" }); // images with a class name "foo" will be wobblified
-
+};
+wobblyImages({classThatWeWantToWobble: ".deviceOrientedImages" });
 
 
 /*
